@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      body {
+        background-color: #d2e8ff;
+      }
+
+      @media (max-width: 640px) {
+        .logo {
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+        .search {
+          width: 90%;
+          margin: auto;
+          gap: 10px;
+        }
+
+        .div-g {
+          width: 90%;
+          margin-top: 0.5rem;
+          display: flex;
+          justify-content: center;
+          gap: 2px;
+        }
+        #issue-container {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Github issue tracker</title>
+  </head>
+  <body>
+    <header class="bg-white">
+      <nav
+        class="w-full sm:flex-wrap sm:px-2 md:flex justify-between md:px-20 py-4"
+      >
+        <div class="logo flex sm:mb-5 md:justify-around gap-1">
+          <img
+            class="w-10 h-full"
+            src="./B13-A5-Github-Issue-Tracker/assets/github-logo.png"
+            alt=""
+          />
+          <h3 class="self-center text-2xl font-semibold">
+            GitHub Issues Tracker
+          </h3>
+        </div>
+        <div class="search flex justify-around gap-4">
+          <label class="input">
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input
+              id="search-input"
+              type="search"
+              required
+              placeholder="Search Issue..."
+            />
+          </label>
+          <button id="search-btn" class="btn btn-primary">Search</button>
+        </div>
+      </nav>
+    </header>
+
+    <section id="btn-section" class="sm:mt-2 md:mt-16 mb-4">
+      <div
+        class="div-g btn-container md:w-[80%] m-auto bg-white p-6 rounded-lg shadow-md"
+      >
+        <button
+          onclick="toggleBtn('all-btn')"
+          id="all-btn"
+          class="btn btn-primary px-8"
+        >
+          All
+        </button>
+        <button
+          onclick="toggleBtn('open-btn')"
+          id="open-btn"
+          class="btn bg-white text-[#64748B] px-8"
+        >
+          Open
+        </button>
+        <button
+          onclick="toggleBtn('closed-btn')"
+          id="closed-btn"
+          class="btn bg-white text-[#64748B] px-8"
+        >
+          Closed
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div
+        id="title-info-container"
+        class="flex justify-between w-[80%] m-auto bg-white p-6 rounded-lg shadow-md"
+      >
+        <div class="title-info flex justify-around gap-2">
+          <img
+            class="p-2 rounded-full bg-purple-200"
+            src="./B13-A5-Github-Issue-Tracker/assets/Aperture.png"
+            alt=""
+          />
+          <div class="info">
+            <p class="text-xl font-semibold">
+              <span id="count">0</span> Issues
+            </p>
+            <p class="text-sm text-[#64748B]">
+              Track and manage your project issues
+            </p>
+          </div>
+        </div>
+        <div class="open-closed flex justify-around gap-4">
+          <p class="self-center">
+            <i class="fa-solid fa-circle text-green-500 text-xs"></i> Open
+          </p>
+          <p class="self-center">
+            <i class="fa-solid fa-circle text-purple-500 text-xs"></i> Closed
+          </p>
+        </div>
+      </div>
+      <hr class="w-[80%] m-auto border-[#d4c9c9d5] rounded-none" />
+      <div
+        id="loading"
+        class="hidden flex h-[50vh] justify-center items-center w-[80%] m-auto bg-[#FBFBFB] p-6 rounded-lg shadow-md"
+      >
+        <span class="loading loading-spinner loading-xl"></span>
+      </div>
+      <div
+        id="issue-container"
+        class="div-g sm:grid-cols-1 md:grid grid-cols-4 gap-3 w-[80%] m-auto bg-[#FBFBFB] p-6 rounded-lg shadow-md"
+      ></div>
+    </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!--<button class="btn" onclick="my_modal_5.showModal()">open modal</button>-->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="detail-con" class=""></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="home.js"></script>
+  </body>
+</html>

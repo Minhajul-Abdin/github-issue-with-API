@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Github Issue Login</title>
+    <style>
+      .line {
+        width: 91%;
+        border: none;
+        border-top: 0.5px solid #64748b;
+        margin: 20px auto;
+        margin-top: 0;
+      }
+      .line legend {
+        text-align: center;
+        padding: 0 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container w-[32%] h-full my-10 mx-auto">
+      <div class="card bg-base-100 w-full shrink-0 shadow-2xl p-8">
+        <div class="signin_logo">
+          <img
+            class="mb-6 m-auto"
+            src="./B13-A5-Github-Issue-Tracker/assets/github-logo.png"
+            alt=""
+          />
+          <h4 class="text-center font-semibold text-[24px]">
+            GitHub Issues Tracker
+          </h4>
+          <p class="text-center text-[16px] text-[#64748B]">
+            Sign in to manage your issues
+          </p>
+        </div>
+        <div class="card-body">
+          <fieldset class="fieldset">
+            <label class="label">Username</label>
+            <input
+              id="email"
+              type="email"
+              class="input w-full"
+              placeholder="Enter Username"
+            />
+            <p class="text-[#4A00FF]">Default: admin</p>
+            <label class="label">Password</label>
+            <input
+              id="password"
+              type="password"
+              class="input w-full"
+              placeholder="Enter Password"
+            />
+            <p class="text-[#4A00FF]">Default: admin123</p>
+            <button id="btn" class="btn btn-neutral bg-[#4A00FF] mt-4">
+              Sign In
+            </button>
+          </fieldset>
+        </div>
+        <fieldset class="line w-full">
+          <legend>OR</legend>
+        </fieldset>
+        <div class="demo">
+          <p class="text-[14px] text-[#64748B] text-center">
+            Demo Credentials:
+          </p>
+          <div class="p-6 mt-2 bg-[#e7e9ec] ml-6 mr-6 text-center">
+            <p><span class="font-semibold">Username:</span> admin</p>
+            <p><span class="font-semibold">Password:</span> admin123</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="signup.js"></script>
+  </body>
+</html>
