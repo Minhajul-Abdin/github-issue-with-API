@@ -32,5 +32,5 @@ _const sum = (a, b) => (parameter) => {function};_
 --->
 Using a **backtic (``)** to create string with variables and multi-line formating
 
-_let name = "Minhaj";_
-_console.log(`My name is ${name}`)_
+_`let name = "Minhaj";`_
+_`console.log(`My name is ${name}`)`_
