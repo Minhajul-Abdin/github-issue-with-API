@@ -23,6 +23,19 @@ function hideLoading(){
 }
     */
 
+//-------------------------------------------------------
+const databuild = (dat) => {
+  const datefromdate = new Date(dat);
+
+
+const localDateString = datefromdate.toLocaleDateString();
+const year = datefromdate.getFullYear();
+const month = datefromdate.getMonth() + 1;
+const day = datefromdate.getDate();
+return (`${day}/${month}/${year}`);
+}
+//-------------------------------------------------------
+
 const allIssue = async () => {
   showLoading();
 
@@ -70,7 +83,7 @@ const displayAllIssue = (issues) => {
           <hr class="w-full m-auto border-[#d4c9c9d5] rounded-none" />
           <div class="more-info text-[#64748B] text-xs pt-2">
             <p>#<span>${issue.id}</span> by <span>${issue.author}</span></p>
-            <p class="pt-2">${issue.createdAt}</p>
+            <p class="pt-2">${databuild(issue.createdAt)}</p>
           </div>
         </div>`
 
@@ -94,7 +107,7 @@ const displayIssueDetails = (issue) => {
     detailsContainer.innerHTML = `<h3 class=" text-2xl font-bold py-2">${issue.title}</h3>
           <div class="cardinfo mt-1 mb-5">
             <p><span class="${issue.status === "open" ? "bg-green-700" : "bg-purple-700" } text-white text-sm px-2 py-1 rounded-3xl">${issue.status}</span>
-            • Opened by ${issue.author} • ${issue.createdAt}</p>
+            • Opened by ${issue.author} • ${databuild(issue.createdAt)}</p>
           </div>
           <div id="labels" class="py-3">${createLabels(issue.labels)}</div>
           <p class="text-sm pb-3 text-[#64748B]">${issue.description}</p>
