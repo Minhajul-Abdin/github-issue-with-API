@@ -5,7 +5,7 @@
 - **var** is function scoped and global scoped.
 - **let** and **const** is blocked scoped
   **var** ,**let** ,**const** are Hoisted but var initializes as undifined which creates undetectable bugs
-  where let and const is in **TDZ(temporal dead zone)** so we can understand where the error is coming from
+  where let and const is in **TDZ (temporal dead zone)** so we can understand where the error is coming from
 
 ## 2️⃣ What is the spread operator (...)?
 
