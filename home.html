@@ -35,6 +35,27 @@
         #issue-container {
           grid-template-columns: repeat(1, minmax(0, 1fr));
         }
+        .issue-co {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          width: 90%;
+        }
+        .title-info-con {
+          width: 90%;
+        }
+        .open-closed {
+          display: flex;
+          flex-wrap: wrap;
+          text-align: right;
+        }
+        .icon-open {
+          width: 50%;
+          height: fit-content;
+        }
+        #loading {
+          width: 90%;
+        }
       }
     </style>
     <link
@@ -50,9 +71,9 @@
   <body>
     <header class="bg-white">
       <nav
-        class="w-full sm:flex-wrap sm:px-2 md:flex justify-between md:px-20 py-4"
+        class="w-full sm:align-middle sm:flex sm:flex-wrap sm:flex-wrap sm:px-2 md:flex justify-between md:px-20 py-4"
       >
-        <div class="logo flex sm:mb-5 md:justify-around gap-1">
+        <div class="logo flex md:mb-0 md:justify-around gap-1">
           <img
             class="w-10 h-full"
             src="./B13-A5-Github-Issue-Tracker/assets/github-logo.png"
@@ -94,7 +115,7 @@
 
     <section id="btn-section" class="sm:mt-2 md:mt-16 mb-4">
       <div
-        class="div-g btn-container md:w-[80%] m-auto bg-white p-6 rounded-lg shadow-md"
+        class="div-g btn-container sm:mt-2 sm:m-auto sm:flex sm:justify-center sm:gap-[2px] sm:w-[90%] md:justify-normal md:w-[80%] m-auto bg-white p-6 rounded-lg shadow-md"
       >
         <button
           onclick="toggleBtn('all-btn')"
@@ -123,11 +144,11 @@
     <section>
       <div
         id="title-info-container"
-        class="flex justify-between w-[80%] m-auto bg-white p-6 rounded-lg shadow-md"
+        class="title-info-con sm:w-[90%] flex justify-between md:w-[80%] m-auto bg-white p-6 rounded-lg shadow-md"
       >
         <div class="title-info flex justify-around gap-2">
           <img
-            class="p-2 rounded-full bg-purple-200"
+            class="p-2 icon-open rounded-full bg-purple-200"
             src="./B13-A5-Github-Issue-Tracker/assets/Aperture.png"
             alt=""
           />
@@ -152,13 +173,13 @@
       <hr class="w-[80%] m-auto border-[#d4c9c9d5] rounded-none" />
       <div
         id="loading"
-        class="hidden flex h-[50vh] justify-center items-center w-[80%] m-auto bg-[#FBFBFB] p-6 rounded-lg shadow-md"
+        class="hidden flex h-[50vh] justify-center items-center sm:w-[90%] md:w-[80%] m-auto bg-[#FBFBFB] p-6 rounded-lg shadow-md"
       >
         <span class="loading loading-spinner loading-xl"></span>
       </div>
       <div
         id="issue-container"
-        class="div-g sm:grid-cols-1 md:grid grid-cols-4 gap-3 w-[80%] m-auto bg-[#FBFBFB] p-6 rounded-lg shadow-md"
+        class="issue-co sm:w-[90%] sm:flex sm:flex-wrap md:grid md:grid-cols-4 gap-3 md:w-[80%] m-auto bg-[#FBFBFB] p-6 rounded-lg shadow-md"
       ></div>
     </section>
 
