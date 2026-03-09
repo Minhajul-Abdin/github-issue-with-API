@@ -25,12 +25,12 @@
 --->
 **Arrow function** uses variable like structure to create function and parameters
 
-_const sum = (a, b) => (parameter) => {function};_
+_`const sum = (a, b) => (parameter) => {function};`_
 
 ## 5️⃣ What are template literals?
 
 --->
 Using a **backtic (``)** to create string with variables and multi-line formating
 
-_`let name = "Minhaj";`_
+_`let name = "Minhaj";`_\
 _`console.log(`My name is ${name}`)`_
